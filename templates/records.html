@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plantation Records</title>
+</head>
+<body>
+
+<h2>Plantation Records</h2>
+
+<table border="1" cellpadding="8">
+<tr>
+    <th>ID</th><th>Tree</th><th>Location</th><th>Count</th>
+    <th>Date</th><th>Water</th><th>Season</th>
+    <th>Predicted</th><th>Actual</th>
+</tr>
+
+{% for r in rows %}
+<tr>
+    <td>{{ r[0] }}</td>
+    <td>{{ r[1] }}</td>
+    <td>{{ r[2] }}</td>
+    <td>{{ r[3] }}</td>
+    <td>{{ r[4] }}</td>
+    <td>{{ r[5] }}</td>
+    <td>{{ r[6] }}</td>
+    <td>{{ r[7] }}</td>
+    <td>{{ r[8] if r[8] else "-" }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/">Back</a>
+
+</body>
+</html>
