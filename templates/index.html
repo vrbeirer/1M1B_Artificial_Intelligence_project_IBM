@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tree Plantation Tracker (AI)</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        form { width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { width: 100%; padding: 10px; background: green; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 10px; background: #e7ffe7; }
+        a { display: inline-block; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<h2>🌱 Tree Plantation Tracker (Real AI + SQLite)</h2>
+
+<form method="POST">
+    <input type="text" name="tree_name" placeholder="Tree Name" required>
+    <input type="text" name="location" placeholder="Location" required>
+    <input type="number" name="count" placeholder="Number of Trees" required>
+    <input type="number" name="watering" placeholder="Watering per Week" required>
+    <input type="date" name="date">
+    <input type="number" name="actual_survival" placeholder="Actual Survival (%)">
+    <button type="submit">Submit</button>
+</form>
+
+{% if success %}
+<div class="result">
+    <p><b>Season:</b> {{ season }}</p>
+    <p><b>Predicted Survival:</b> {{ predicted_survival | round(2) }}%</p>
+</div>
+{% endif %}
+
+<a href="/records">View Records</a>
+
+</body>
+</html>
